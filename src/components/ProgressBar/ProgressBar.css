@@ -1,20 +1,19 @@
-.circular-chart {
+.svg{
     display: block;
     margin: 20px auto;
     max-width: 100%;
-    max-height: 250px;
 }
   
-.circular-bg {
+.svg-circle-bg {
     fill: none;
 }
   
-.circle {
+.svg-circle {
     fill: none;
 }
 
-.percentage {
-    font-size: 1.3rem;
+.svg-circle-text {
+    font-size: 2rem;
     text-anchor: middle;
     fill: #fff;
     font-weight: bold;
