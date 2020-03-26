@@ -27,22 +27,22 @@ const ProgressBar = props => {
     }, [setOffset, progress, circumference, offset]);
 
     return (
-        <div>
-            <svg
-                className="circular-chart"
-                width={size}   
-                height={size} 
+        <>
+                        <svg
+                className="svg"
+                width={size}
+                height={size}
             >
                 <circle
-                    className="circular-bg"
+                    className="svg-circle-bg"
                     stroke={circleOneStroke}
                     cx={center}
                     cy={center}
                     r={radius}
                     strokeWidth={strokeWidth}
-                ></circle>
+                />
                 <circle
-                    className="circle"
+                    className="svg-circle"
                     ref={circleRef}
                     stroke={circleTwoStroke}
                     cx={center}
@@ -51,25 +51,24 @@ const ProgressBar = props => {
                     strokeWidth={strokeWidth}
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
-                ></circle>
-                <text
-                    x={center}
-                    y={center}
-                    className="percentage"
-                >
-                    {progress}%
+                />
+                <text 
+                    x={`${center}`} 
+                    y={`${center}`} 
+                    className="svg-circle-text">
+                        {progress}%
                 </text>
             </svg>
-        </div>
+        </>
     );
 }
 
 ProgressBar.propTypes = {
-    size: PropTypes.number,
-    progress: PropTypes.number,
-    strokeWidth: PropTypes.number,
-    circleOneStroke: PropTypes.string,
-    circleTwoStroke: PropTypes.string
+    size: PropTypes.number.isRequired,
+    progress: PropTypes.number.isRequired,
+    strokeWidth: PropTypes.number.isRequired,
+    circleOneStroke: PropTypes.string.isRequired,
+    circleTwoStroke: PropTypes.string.isRequired
 }
 
 export default ProgressBar;
