@@ -1,8 +1,8 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -37,6 +37,16 @@ input {
   font-weight: bold;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 h1 { 
   margin: 0;
   text-transform: uppercase;
@@ -44,3 +54,4 @@ h1 {
   font-size: 46px;
   margin-bottom: 20px;
 }
+
