@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import './App.css';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 
@@ -20,9 +21,11 @@ const App = () => {
 
   const onChange = e => {
     if (e.target.value) {
-      let progress = parseInt(e.target.value, 10);
-      if (progress > 100) {
+      if (e.target.value > 100) {
         progress = 100;
+      }
+      if (e.target.value < 0) {
+          progress = 0;
       }
       setProgress(progress);
       const randomProgressColor = randomColor();
@@ -32,21 +35,20 @@ const App = () => {
     }
   }
 
-  const state = {
-    size: 250,
-    progress,
-    strokeWidth: 15,
-    circleOneStroke: '#d9edfe',
-    circleTwoStroke: color
-  }
   return (
-    <div className="App">
-      <div className="App-header">
+    <div className="app">
+      <div className="app-header">
         <h1>SVG Circle Progress</h1>
-        <ProgressBar { ...state } />
+        <ProgressBar 
+          progress={progress}
+          size={500}
+          strokeWidth={15}
+          circleOneStroke='#d9edfe'
+          circleTwoStroke={color}
+        />
         <p>
           <input
-            type="text"
+            type="number"
             name="percent"
             placeholder="Add Progress Value"
             onChange={onChange}
